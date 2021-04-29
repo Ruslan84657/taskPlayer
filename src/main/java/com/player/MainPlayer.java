@@ -14,22 +14,48 @@ public class MainPlayer {
         List<Song> songs = createSongs();
         songs.forEach(song -> player.addSong(song));
 
-        System.out.println(player);
+        System.out.println("List of songs : \n " + player + "\n");
 
         player.deleteSong(songs.get(2));
 
-        System.out.println(player);
+        System.out.println("List of songs : \n " + player + "\n");
 
         player.mixPlayList();
 
-        System.out.println(player);
+        System.out.println("List of songs after shuffle : \n " + player + "\n");
+
+        player.playSong(songs.get(1));
 
         player.playNext();
         player.playNext();
         player.playNext();
+        player.playNext();
+        player.playNext();
+        player.playNext();
+        player.playNext();
+        player.playNext();
+        player.playNext();
+        System.out.println();
+
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+        player.playPreviously();
+
+        System.out.println(player + "\n");
+
+        player.playInOrder();
+
+        System.out.println("List of songs after sorting : \n " + player + "\n");
 
     }
-    private static List<Song> createSongs(){
+
+    private static List<Song> createSongs() {
         List<Song> songs = new ArrayList<>();
         songs.add(new Song(1, "NK", "Elefante", Genre.POP));
         songs.add(new Song(2, "BI-2", "Serebro", Genre.ROCK));
